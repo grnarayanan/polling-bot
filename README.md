@@ -2,7 +2,7 @@
 
 polling-bot is a Discord bot to conduct basic polling functions in a Discord server
 
-![License](https://img.shields.io/github/license/grnarayanan/polling-bot.svg)
+![License](https://img.shields.io/github/license/grnarayanan/polling-bot.svg) ![GitHub issues](https://img.shields.io/github/issues/grnarayanan/polling-bot)
 
 ## Overview
 
