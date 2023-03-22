@@ -28,7 +28,7 @@ This project is a pure python project using modern tooling. It uses a `Makefile`
 - `make coverage`: run automated tests with `pytest` and collect coverage information
 - `make dist`: package library for distribution
 
-## Usage
+## Setup
 
 To setup the Discord bot, follow the steps below:
 1. Navigate to http://discordapp.com/developers/applications and create an account, or login if you already have a Discord account. 
@@ -47,5 +47,25 @@ Finally, to run the bot, execute the command `python3 __main__.py`.
 
 ## Available Commands
 
+`/poll` - Starts a poll in the server
 
+`/add <option> <content>` - Add content to the poll
+
+- Options are 'name', 'description', and 'choice'
+
+`/edit <option> <content>` - Edit the content of the poll
+
+- Options are 'name', 'description', and 'choice'
+
+`/vote <choice #>` - Vote for a choice in the poll
+
+- Choice # is the # corresponding to the desired choice, viewable with `/view choices` or `/view poll`
+
+`/view <option>` - View the contents and results of the poll
+
+- Options are 'name', 'description', 'choices', 'poll', and 'results'
+
+## Usage
+
+Start by executing `/poll` to create a poll. Next, add a name, description, and choices to the poll using the `/add` command. If any of these contents need to be modified, use the `/edit` command. Have users then vote on the choices by running `/view poll` to see the current state of the poll, and then voting on their desired selection using the `/vote` command. Once all users have voted and the poll has concluded, run `/view results` to view the results and winner of the poll.  
 
