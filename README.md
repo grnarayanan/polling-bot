@@ -14,3 +14,38 @@ should be played, when to schedule a party, etc.
 
 The bot supports starting a poll and adding options for choices by the users. It will then keep track of responses made to the poll,
 allow users to change their response, and surface the winner of the poll when called upon. 
+
+## Details
+
+This project is a pure python project using modern tooling. It uses a `Makefile` as a command registry, with the following commands:
+- `make`: list available commands
+- `make develop`: install and build this library and its dependencies using `pip`
+- `make build`: build the library using `setuptools`
+- `make lint`: perform static analysis of this library with `flake8` and `black`
+- `make format`: autoformat this library using `black`
+- `make annotate`: run type checking using `mypy`
+- `make test`: run automated tests with `pytest`
+- `make coverage`: run automated tests with `pytest` and collect coverage information
+- `make dist`: package library for distribution
+
+## Usage
+
+To setup the Discord bot, follow the steps below:
+1. Navigate to http://discordapp.com/developers/applications and create an account, or login if you already have a Discord account. 
+2. Select "New Application" and give it a name ie. "polling-bot"
+3. Navigate to the Bot tab on the left side menu, and click "Add Bot" and confirm. 
+4. Under the TOKEN section, click "Copy" and copy the token.
+5. To add the bot to your Discord server, select the OAuth2 tab from the left side menu. From the SCOPES section, select bot option and from the BOT PERMISSIONS section, select Administrator. Copy and navigate to the generated URL and select the server you want to add the bot to from the dropdown, then click "Authorize."
+
+Next, install polling-bot with pip: `pip install polling-bot`.
+
+Navigate to the "polling-bot" directory and create a file called `.env` with the following content:
+
+`DISCORD_TOKEN={token}`, where token is the token copied from the Developer Portal above. 
+
+Finally, to run the bot, execute the command `python3 __main__.py`.
+
+## Available Commands
+
+
+
