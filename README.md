@@ -49,9 +49,7 @@ Finally, to run the bot, execute the command `python3 __main__.py`.
 
 `/poll` - Starts a poll in the server
 
-`/add <option> <content>` - Add content to the poll
-
-- Options are 'name', 'description', and 'choice'
+`/add choice <content>` - Add choices to the poll
 
 `/edit <option> <content>` - Edit the content of the poll
 
@@ -67,5 +65,4 @@ Finally, to run the bot, execute the command `python3 __main__.py`.
 
 ## Usage
 
-Start by executing `/poll` to create a poll. Next, add a name, description, and choices to the poll using the `/add` command. If any of these contents need to be modified, use the `/edit` command. Have users then vote on the choices by running `/view poll` to see the current state of the poll, and then voting on their desired selection using the `/vote` command. Once all users have voted and the poll has concluded, run `/view results` to view the results and winner of the poll.  
-
+Start by executing `/poll` to create a poll. Edit the name and description of the poll using the `/edit` command. Next, add choices to the poll using the `/add` command. Have users then vote on the choices by running `/view poll` to see the current state of the poll, and then voting on their desired selection using the `/vote` command. Once all users have voted and the poll has concluded, run `/view results` to view the results and winner of the poll.  
