@@ -43,6 +43,7 @@ class TestBot(unittest.TestCase):
         self.bot.num_choices = num_choices
         self.bot.poll_data = defaultdict()
         self.bot.poll_data["Choices"] = defaultdict()
+        self.bot.poll_data["Votes"] = defaultdict()
 
         test_choice = self.faker.text()
 
@@ -88,6 +89,28 @@ class TestBot(unittest.TestCase):
         self.assertEqual(self.bot.edit_choice(new_choice, num_choice), True)
         self.assertEqual(self.bot.poll_data["Choices"][num_choice], new_choice)
 
+    def test_get_poll(self):
+        self.bot.poll_data = defaultdict()
+        name = self.faker.text()
+        self.bot.poll_data["Name"] = name
+        description = self.faker.text()
+        self.bot.poll_data["Description"] = description
+        self.bot.poll_data["Choices"] = defaultdict()
+        self.bot.poll_data["Votes"] = defaultdict()
+        num_choices = randint(1, 10)
+        for i in range(num_choices):
+            self.bot.poll_data["Choices"][i] = self.faker.name()
+            self.bot.poll_data["Votes"][i] = randint(1, 100)
+
+        expected_msg = name + "\n" + description + "\n"
+        expected_msg += "Choices:\n"
+        for num_choice, choice in self.bot.poll_data["Choices"].items():
+            expected_msg += (
+                str(num_choice) + ") " + choice + "\t" + "Votes: " + str(self.bot.poll_data["Votes"][num_choice]) + "\n"
+            )
+
+        self.assertEqual(self.bot.get_poll(), expected_msg[: len(expected_msg) - 1])
+
     def test_get_name(self):
         self.bot.poll_data = defaultdict()
         name = self.faker.text()
@@ -105,24 +128,37 @@ class TestBot(unittest.TestCase):
     def test_get_choices(self):
         self.bot.poll_data = defaultdict()
         choices = self.faker.profile()
-        self.bot.poll_data["Choices"] = choices
+        self.bot.poll_data["Choices"] = defaultdict()
+        self.bot.poll_data["Votes"] = defaultdict()
+        num_choices = randint(1, 10)
+        for i in range(num_choices):
+            self.bot.poll_data["Choices"][i] = self.faker.name()
+            self.bot.poll_data["Votes"][i] = randint(1, 100)
 
-        self.assertEqual(self.bot.get_choices(), choices)
+        expected_msg = "Choices:\n"
+        for num_choice, choice in self.bot.poll_data["Choices"].items():
+            expected_msg += (
+                str(num_choice) + ") " + choice + "\t" + "Votes: " + str(self.bot.poll_data["Votes"][num_choice]) + "\n"
+            )
+
+        self.assertEqual(self.bot.get_choices(), expected_msg[: len(expected_msg) - 1])
 
     def test_get_results(self):
         self.bot.poll_data = defaultdict()
+        self.bot.poll_data["Name"] = self.faker.text()
         self.bot.poll_data["Choices"] = defaultdict()
         self.bot.poll_data["Votes"] = defaultdict()
         num = randint(1, 10)
         self.bot.num_choices = num
-        votes = 0
         for i in range(0, num):
-            self.bot.poll_data["Choices"][i] = self.faker.text()
-            self.bot.poll_data["Votes"][i] = votes
-            votes += 1
+            self.bot.poll_data["Choices"][i] = self.faker.name()
+            self.bot.poll_data["Votes"][i] = i
+
+        expected_msg = "The winner of " + self.bot.get_name() + " is:\n" + self.bot.poll_data["Choices"][num - 1]
+        expected_msg += ", with " + str(num - 1) + " votes!"
 
         self.assertNotEqual(self.bot.get_results(), (None, None))
-        self.assertEqual(self.bot.get_results(), ([self.bot.poll_data["Choices"][num - 1]], num - 1))
+        self.assertEqual(self.bot.get_results(), expected_msg)
 
     # INTEGRATION TEST
     def test_conduct_poll(self):
@@ -134,13 +170,16 @@ class TestBot(unittest.TestCase):
 
         num = randint(1, 20)
         for i in range(0, num):
-            self.bot.add_choice(self.faker.text())
+            self.bot.add_choice(self.faker.name())
             for _ in range(0, i):
                 self.bot.add_vote(i)
 
+        expected_msg = "The winner of " + self.bot.get_name() + " is:\n" + self.bot.poll_data["Choices"][num - 1]
+        expected_msg += ", with " + str(num - 1) + " votes!"
+
         self.assertEqual(self.bot.get_name(), name)
         self.assertEqual(self.bot.get_description(), description)
-        self.assertEqual(self.bot.get_results(), ([self.bot.poll_data["Choices"][num - 1]], num - 1))
+        self.assertEqual(self.bot.get_results(), expected_msg)
 
 
 if __name__ == '__main__':
