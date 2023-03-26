@@ -5,6 +5,7 @@ polling-bot is a Discord bot to conduct basic polling functions in a Discord ser
 [![Build Status](https://github.com/grnarayanan/polling-bot/workflows/Build%20Status/badge.svg?branch=main)](https://github.com/grnarayanan/polling-bot/actions?query=workflow%3A%22Build+Status%22)
 [![codecov](https://codecov.io/gh/grnarayanan/polling-bot/branch/main/graph/badge.svg)](https://codecov.io/gh/grnarayanan/polling-bot)
 ![License](https://img.shields.io/github/license/grnarayanan/polling-bot.svg) ![GitHub issues](https://img.shields.io/github/issues/grnarayanan/polling-bot)
+[![PyPI](https://img.shields.io/pypi/v/polling-bot)](https://pypi.org/project/polling-bot/)
 
 ## Overview
 
