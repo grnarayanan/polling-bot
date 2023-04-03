@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to polling-bot’s documentation! &mdash; polling-bot 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            polling-bot
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to polling-bot’s documentation!</a></li>
+<li><a class="reference internal" href="#setup">Setup</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a></li>
+<li><a class="reference internal" href="#usage">Usage</a></li>
+<li><a class="reference internal" href="#module-polling_bot">Documentation</a><ul>
+<li><a class="reference internal" href="#polling_bot.PollingBot"><code class="docutils literal notranslate"><span class="pre">PollingBot</span></code></a><ul>
+<li><a class="reference internal" href="#polling_bot.PollingBot.add_choice"><code class="docutils literal notranslate"><span class="pre">PollingBot.add_choice()</span></code></a></li>
+<li><a class="reference internal" href="#polling_bot.PollingBot.add_vote"><code class="docutils literal notranslate"><span class="pre">PollingBot.add_vote()</span></code></a></li>
+<li><a class="reference internal" href="#polling_bot.PollingBot.create_poll"><code class="docutils literal notranslate"><span class="pre">PollingBot.create_poll()</span></code></a></li>
+<li><a class="reference internal" href="#polling_bot.PollingBot.edit_choice"><code class="docutils literal notranslate"><span class="pre">PollingBot.edit_choice()</span></code></a></li>
+<li><a class="reference internal" href="#polling_bot.PollingBot.edit_description"><code class="docutils literal notranslate"><span class="pre">PollingBot.edit_description()</span></code></a></li>
+<li><a class="reference internal" href="#polling_bot.PollingBot.edit_name"><code class="docutils literal notranslate"><span class="pre">PollingBot.edit_name()</span></code></a></li>
+<li><a class="reference internal" href="#polling_bot.PollingBot.get_choices"><code class="docutils literal notranslate"><span class="pre">PollingBot.get_choices()</span></code></a></li>
+<li><a class="reference internal" href="#polling_bot.PollingBot.get_description"><code class="docutils literal notranslate"><span class="pre">PollingBot.get_description()</span></code></a></li>
+<li><a class="reference internal" href="#polling_bot.PollingBot.get_name"><code class="docutils literal notranslate"><span class="pre">PollingBot.get_name()</span></code></a></li>
+<li><a class="reference internal" href="#polling_bot.PollingBot.get_poll"><code class="docutils literal notranslate"><span class="pre">PollingBot.get_poll()</span></code></a></li>
+<li><a class="reference internal" href="#polling_bot.PollingBot.get_results"><code class="docutils literal notranslate"><span class="pre">PollingBot.get_results()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">polling-bot</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Welcome to polling-bot’s documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="welcome-to-polling-bot-s-documentation">
+<h1>Welcome to polling-bot’s documentation!<a class="headerlink" href="#welcome-to-polling-bot-s-documentation" title="Permalink to this heading">¶</a></h1>
+<p>polling-bot is a Discord bot to conduct basic polling functions in a Discord server.</p>
+</section>
+<section id="setup">
+<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">¶</a></h1>
+<p>To setup the Discord bot, follow the steps below:</p>
+<ol class="arabic simple">
+<li><p>Navigate to <a class="reference external" href="http://discordapp.com/developers/applications">http://discordapp.com/developers/applications</a> and create an account, or login if you already have a Discord account.</p></li>
+<li><p>Select “New Application” and give it a name ie. “polling-bot”</p></li>
+<li><p>Navigate to the Bot tab on the left side menu, and click “Add Bot” and confirm.</p></li>
+<li><p>Under the TOKEN section, click “Copy” and copy the token.</p></li>
+<li><p>To add the bot to your Discord server, select the OAuth2 tab from the left side menu. From the SCOPES section, select bot option and from the BOT PERMISSIONS section, select Administrator. Copy and navigate to the generated URL and select the server you want to add the bot to from the dropdown, then click “Authorize.”</p></li>
+</ol>
+<p>Next, install polling-bot with pip: <code class="code highlight bash docutils literal highlight-bash">pip<span class="w"> </span>install<span class="w"> </span>polling-bot</code></p>
+<p>Finally, to run the bot, import and run it as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">discord</span>
+<span class="n">pollingbot</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="s2">&quot;polling-bot&quot;</span><span class="p">)</span>
+
+<span class="n">bot</span> <span class="o">=</span> <span class="n">pollingbot</span><span class="o">.</span><span class="n">PollingBot</span><span class="p">(</span><span class="n">intents</span><span class="o">=</span><span class="n">discord</span><span class="o">.</span><span class="n">Intents</span><span class="o">.</span><span class="n">all</span><span class="p">(),</span> <span class="n">command_prefix</span><span class="o">=</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+<span class="n">bot</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;TOKEN&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Where token is the token copied from the Developer Portal above.</p>
+<p>The bot will now be responsive to commands in your Discord server.</p>
+</section>
+<section id="available-commands">
+<h1>Available Commands<a class="headerlink" href="#available-commands" title="Permalink to this heading">¶</a></h1>
+<p><code class="code highlight bash docutils literal highlight-bash">/poll</code> - Starts a poll in the server</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/poll.png"><img alt="Example usage of /poll command" src="_images/poll.png" style="width: 300px;" /></a>
+</div></blockquote>
+<p><code class="code highlight bash docutils literal highlight-bash">/add<span class="w"> </span>choice<span class="w"> </span>&lt;content&gt;</code> - Add choices to the poll</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/add.png"><img alt="Example usage of /add name command" src="_images/add.png" style="width: 300px;" /></a>
+</div></blockquote>
+<p><code class="code highlight bash docutils literal highlight-bash">/edit<span class="w"> </span>&lt;option&gt;<span class="w"> </span>&lt;content&gt;</code> - Edit the content of the poll</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/edit.png"><img alt="Example usage of /edit name command" src="_images/edit.png" style="width: 300px;" /></a>
+</div></blockquote>
+<ul class="simple">
+<li><p>Options are ‘name’, ‘description’, and ‘choice’</p></li>
+</ul>
+<p><code class="code highlight bash docutils literal highlight-bash">/vote<span class="w"> </span>&lt;choice<span class="w"> </span><span class="c1">#&gt;</span></code> - Vote for a choice in the poll</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/vote.png"><img alt="Example usage of /vote command" src="_images/vote.png" style="width: 300px;" /></a>
+</div></blockquote>
+<ul class="simple">
+<li><p>Choice # is the # corresponding to the desired choice, viewable with <code class="code highlight bash docutils literal highlight-bash">/view<span class="w"> </span>choices</code> or <code class="code highlight bash docutils literal highlight-bash">/view<span class="w"> </span>poll</code></p></li>
+</ul>
+<p><code class="code highlight bash docutils literal highlight-bash">/view<span class="w"> </span>&lt;option&gt;</code> - View the contents and results of the poll</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/results.png"><img alt="Example usage of /view results command" src="_images/results.png" style="width: 300px;" /></a>
+</div></blockquote>
+<ul class="simple">
+<li><p>Options are ‘name’, ‘description’, ‘choices’, ‘poll’, and ‘results’</p></li>
+</ul>
+</section>
+<section id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">¶</a></h1>
+<p>Start by executing <code class="code highlight bash docutils literal highlight-bash">/poll</code> to create a poll.
+Edit the name and description of the poll using the <code class="code highlight bash docutils literal highlight-bash">/edit</code> command.
+Next, add choices to the poll using the <code class="code highlight bash docutils literal highlight-bash">/add</code> command.
+The poll name and description can be modified at any time using the <code class="code highlight bash docutils literal highlight-bash">edit<span class="w"> </span>name/description</code> command followed by the new text.
+The poll choices can be modified by using the <code class="code highlight bash docutils literal highlight-bash">/edit<span class="w"> </span>choice<span class="w"> </span><span class="c1">#</span></code> followed by the new choice label, where # is the choice number in the poll.
+Have users then vote on the choices by running <code class="code highlight bash docutils literal highlight-bash">/view<span class="w"> </span>poll</code> to see the current state of the poll, and then voting on their desired selection using the <code class="code highlight bash docutils literal highlight-bash">/vote</code> command.
+Once all users have voted and the poll has concluded, run <code class="code highlight bash docutils literal highlight-bash">/view<span class="w"> </span>results</code> to view the results and winner of the poll.
+If there are multiple winners of the poll, then they all will be displayed.</p>
+<a class="reference internal image-reference" href="_images/long-version.gif"><img alt="Quick demo using polling-bot in a Discord server" src="_images/long-version.gif" style="width: 300px;" /></a>
+</section>
+<section class="page-break" id="module-polling_bot">
+<span id="documentation"></span><h1>Documentation<a class="headerlink" href="#module-polling_bot" title="Permalink to this heading">¶</a></h1>
+<p>polling-bot for Discord</p>
+<p>Conduct basic polling functions in a Discord server</p>
+<p>&#64;author: Ganesan Narayanan</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="polling_bot.PollingBot">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">polling_bot.</span></span><span class="sig-name descname"><span class="pre">PollingBot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">intents</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">command_prefix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#polling_bot.PollingBot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Bot</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="polling_bot.PollingBot.add_choice">
+<span class="sig-name descname"><span class="pre">add_choice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">choice</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#polling_bot.PollingBot.add_choice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a choice to the poll and initializes # of votes to 0. Modifies poll_data in place.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>choice</strong> (<em>str</em>) – Text for the new choice to add.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="polling_bot.PollingBot.add_vote">
+<span class="sig-name descname"><span class="pre">add_vote</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_choice</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#polling_bot.PollingBot.add_vote" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a vote to the specified choice in the poll. Modifies poll_data in place.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>num_choice</strong> (<em>int</em>) – Number corresponding to intended choice.
+Number is visible by running /view poll command.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="polling_bot.PollingBot.create_poll">
+<span class="sig-name descname"><span class="pre">create_poll</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#polling_bot.PollingBot.create_poll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new poll structure poll_data with default parameters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="polling_bot.PollingBot.edit_choice">
+<span class="sig-name descname"><span class="pre">edit_choice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_choice</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_choice</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#polling_bot.PollingBot.edit_choice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Edits the specified choice in the poll. Modifies poll_data in place.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>new_choice</strong> (<em>str</em>) – Text for the new description.</p></li>
+<li><p><strong>num_choice</strong> (<em>int</em>) – Number for choice to modify, view with /view poll.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="polling_bot.PollingBot.edit_description">
+<span class="sig-name descname"><span class="pre">edit_description</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_description</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#polling_bot.PollingBot.edit_description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Edits the description of the poll. Modifies poll_data in place.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>new_description</strong> (<em>str</em>) – Text for the new description.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="polling_bot.PollingBot.edit_name">
+<span class="sig-name descname"><span class="pre">edit_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#polling_bot.PollingBot.edit_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Edits the name of the poll. Modifies poll_data in place.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>new_name</strong> (<em>str</em>) – Text for the new name.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="polling_bot.PollingBot.get_choices">
+<span class="sig-name descname"><span class="pre">get_choices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#polling_bot.PollingBot.get_choices" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the choices and votes in the poll in a printable format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Formatted string of poll choices, choice number, and votes per choice.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="polling_bot.PollingBot.get_description">
+<span class="sig-name descname"><span class="pre">get_description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#polling_bot.PollingBot.get_description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the description of the poll in a printable format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Formatted string of poll description.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="polling_bot.PollingBot.get_name">
+<span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#polling_bot.PollingBot.get_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the name of the poll in a printable format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Formatted string of poll name.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="polling_bot.PollingBot.get_poll">
+<span class="sig-name descname"><span class="pre">get_poll</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#polling_bot.PollingBot.get_poll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the contents of the poll in a printable format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Formatted string of all poll contents.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="polling_bot.PollingBot.get_results">
+<span class="sig-name descname"><span class="pre">get_results</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#polling_bot.PollingBot.get_results" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the results of the poll in a printable format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Formatted string with winner of poll and number of votes.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Ganesan Narayanan.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
