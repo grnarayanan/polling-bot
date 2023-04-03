@@ -76,6 +76,26 @@ dist: clean build dist-build dist-check  ## Build dists
 publish:  # Upload python assets
 	echo "would usually run python3 -m twine upload dist/* --skip-existing"
 
+########
+# DOCS #
+########
+
+TMPREPO=/tmp/docs/polling-bot
+
+docs: 
+    $(MAKE) -C docs/ clean
+    $(MAKE) -C docs/ html
+
+pages: 
+    rm -rf $(TMPREPO)
+    git clone -b gh-pages https://github.com/grnarayanan/polling-bot.git $(TMPREPO)
+    rm -rf $(TMPREPO)/*
+    cp -r docs/build/html/* $(TMPREPO)
+    cd $(TMPREPO);\
+    git add -A ;\
+    git commit -a -m 'auto-updating docs' ;\
+    git push
+
 #########
 # CLEAN #
 #########
