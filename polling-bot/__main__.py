@@ -12,9 +12,9 @@ import discord
 from dotenv import load_dotenv
 from polling_bot import PollingBot
 
-load_dotenv()
-token = os.getenv('TOKEN')
+if __name__ == "__main__":
+    load_dotenv()
+    token = os.getenv('TOKEN')
 
-bot = PollingBot(intents=discord.Intents.all(), command_prefix="/")
-
-bot.run(token)
+    bot = PollingBot(intents=discord.Intents.all(), command_prefix="/")
+    bot.run(token)
