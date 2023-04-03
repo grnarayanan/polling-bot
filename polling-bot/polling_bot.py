@@ -13,6 +13,7 @@ from discord.ext import commands
 
 class PollingBot(commands.Bot):
     def create_poll(self):
+        """Creates a new poll structure poll_data with default parameters."""
         self.poll_data = defaultdict()
         self.poll_data["Choices"] = defaultdict()
         self.poll_data["Votes"] = defaultdict()
@@ -22,27 +23,59 @@ class PollingBot(commands.Bot):
         self.poll_active = True
 
     def add_choice(self, choice):
+        """Adds a choice to the poll and initializes # of votes to 0. Modifies poll_data in place.
+
+        Args:
+            choice (str): Text for the new choice to add.
+
+        """
         self.num_choices += 1
         self.poll_data["Choices"][self.num_choices] = choice
         self.poll_data["Votes"][self.num_choices] = 0
 
     def add_vote(self, num_choice):
+        """Adds a vote to the specified choice in the poll. Modifies poll_data in place.
+
+        Args:
+            num_choice (int): Number corresponding to intended choice.
+                Number is visible by running /view poll command.
+
+        """
         if num_choice not in self.poll_data["Choices"]:
             return False
 
         self.poll_data["Votes"][num_choice] += 1
 
     def edit_name(self, new_name):
+        """Edits the name of the poll. Modifies poll_data in place.
+
+        Args:
+            new_name (str): Text for the new name.
+
+        """
         self.poll_data["Name"] = new_name
 
         return True
 
     def edit_description(self, new_description):
+        """Edits the description of the poll. Modifies poll_data in place.
+
+        Args:
+            new_description (str): Text for the new description.
+
+        """
         self.poll_data["Description"] = new_description
 
         return True
 
     def edit_choice(self, new_choice, num_choice):
+        """Edits the specified choice in the poll. Modifies poll_data in place.
+
+        Args:
+            new_choice (str): Text for the new description.
+            num_choice (int): Number for choice to modify, view with /view poll.
+
+        """
         if num_choice not in self.poll_data["Choices"]:
             return False
 
@@ -51,18 +84,40 @@ class PollingBot(commands.Bot):
         return True
 
     def get_poll(self):
+        """Gets the contents of the poll in a printable format.
+
+        Returns:
+            str: Formatted string of all poll contents.
+
+        """
         return self.poll_data["Name"] + "\n" + self.poll_data["Description"] + "\n" + self.get_choices()
 
     def get_name(self):
+        """Gets the name of the poll in a printable format.
+
+        Returns:
+            str: Formatted string of poll name.
+
+        """
         return self.poll_data["Name"]
 
     def get_description(self):
-        if "Description" not in self.poll_data:
-            return False
+        """Gets the description of the poll in a printable format.
+
+        Returns:
+            str: Formatted string of poll description.
+
+        """
 
         return self.poll_data["Description"]
 
     def get_choices(self):
+        """Gets the choices and votes in the poll in a printable format.
+
+        Returns:
+            str: Formatted string of poll choices, choice number, and votes per choice.
+
+        """
         msg = "Choices:\n"
 
         for num_choice, choice in self.poll_data["Choices"].items():
@@ -71,6 +126,12 @@ class PollingBot(commands.Bot):
         return msg[: len(msg) - 1]
 
     def get_results(self):
+        """Gets the results of the poll in a printable format.
+
+        Returns:
+            str: Formatted string with winner of poll and number of votes.
+
+        """
         if self.num_choices == 0:
             return None, None
 

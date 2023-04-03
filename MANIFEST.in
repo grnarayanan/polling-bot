@@ -13,6 +13,13 @@ exclude .gitignore
 exclude .gitattributes
 exclude .env
 
+recursive-exclude docs *.bat
+recursive-exclude docs *.gif
+recursive-exclude docs *.png
+recursive-exclude docs *.py
+recursive-exclude docs *.rst
+recursive-exclude docs Makefile
+
 # Patterns to exclude from any directory
 global-exclude *~
 global-exclude *.pyc

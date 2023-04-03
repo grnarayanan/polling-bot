@@ -40,11 +40,20 @@ To setup the Discord bot, follow the steps below:
 
 Next, install polling-bot with pip: `pip install polling-bot`.
 
-Navigate to the "polling-bot" directory and create a file called `.env` with the following content:
+Finally, to run the bot, import and run it as follows:
 
-`DISCORD_TOKEN={token}`, where token is the token copied from the Developer Portal above. 
+```python
 
-Finally, to run the bot, execute the command `python3 __main__.py`.
+import discord
+pollingbot = __import__("polling-bot")
+   
+bot = pollingbot.PollingBot(intents=discord.Intents.all(), command_prefix="/")
+bot.run('TOKEN')
+```
+
+Where token is the token copied from the Developer Portal above.
+
+The bot will now be responsive to commands in your Discord server. 
 
 ## Available Commands
 
