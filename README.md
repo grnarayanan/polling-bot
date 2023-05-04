@@ -14,8 +14,7 @@ Often times, reaching a consensus can be difficult without an organized method i
 server to solve that need in a simple and efficient manner. Use cases could include deciding with friends on a place to eat, what video game 
 should be played, when to schedule a party, etc. 
 
-The bot supports starting a poll and adding options for choices by the users. It will then keep track of responses made to the poll,
-allow users to change their response, and surface the winner of the poll when called upon. 
+The bot supports starting a poll and adding options for choices by the users. It will then keep track of responses made to the poll, and surface the winner of the poll when called upon. 
 
 ## Details
 
@@ -64,7 +63,7 @@ The bot will now be responsive to commands in your Discord server.
 
 `/edit <option> <content>` - Edit the content of the poll
 
-- Options are 'name', 'description', and 'choice'
+- Options are 'name', 'description', 'choice', and 'duration' (to alter how long the poll is open for [default is 5 mins])
 
 `/vote <choice #>` - Vote for a choice in the poll
 
