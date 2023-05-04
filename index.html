@@ -48,15 +48,19 @@
 <li><a class="reference internal" href="#polling_bot.PollingBot"><code class="docutils literal notranslate"><span class="pre">PollingBot</span></code></a><ul>
 <li><a class="reference internal" href="#polling_bot.PollingBot.add_choice"><code class="docutils literal notranslate"><span class="pre">PollingBot.add_choice()</span></code></a></li>
 <li><a class="reference internal" href="#polling_bot.PollingBot.add_vote"><code class="docutils literal notranslate"><span class="pre">PollingBot.add_vote()</span></code></a></li>
+<li><a class="reference internal" href="#polling_bot.PollingBot.check_time"><code class="docutils literal notranslate"><span class="pre">PollingBot.check_time()</span></code></a></li>
 <li><a class="reference internal" href="#polling_bot.PollingBot.create_poll"><code class="docutils literal notranslate"><span class="pre">PollingBot.create_poll()</span></code></a></li>
 <li><a class="reference internal" href="#polling_bot.PollingBot.edit_choice"><code class="docutils literal notranslate"><span class="pre">PollingBot.edit_choice()</span></code></a></li>
 <li><a class="reference internal" href="#polling_bot.PollingBot.edit_description"><code class="docutils literal notranslate"><span class="pre">PollingBot.edit_description()</span></code></a></li>
+<li><a class="reference internal" href="#polling_bot.PollingBot.edit_duration"><code class="docutils literal notranslate"><span class="pre">PollingBot.edit_duration()</span></code></a></li>
 <li><a class="reference internal" href="#polling_bot.PollingBot.edit_name"><code class="docutils literal notranslate"><span class="pre">PollingBot.edit_name()</span></code></a></li>
 <li><a class="reference internal" href="#polling_bot.PollingBot.get_choices"><code class="docutils literal notranslate"><span class="pre">PollingBot.get_choices()</span></code></a></li>
+<li><a class="reference internal" href="#polling_bot.PollingBot.get_choices_with_voters"><code class="docutils literal notranslate"><span class="pre">PollingBot.get_choices_with_voters()</span></code></a></li>
 <li><a class="reference internal" href="#polling_bot.PollingBot.get_description"><code class="docutils literal notranslate"><span class="pre">PollingBot.get_description()</span></code></a></li>
 <li><a class="reference internal" href="#polling_bot.PollingBot.get_name"><code class="docutils literal notranslate"><span class="pre">PollingBot.get_name()</span></code></a></li>
 <li><a class="reference internal" href="#polling_bot.PollingBot.get_poll"><code class="docutils literal notranslate"><span class="pre">PollingBot.get_poll()</span></code></a></li>
 <li><a class="reference internal" href="#polling_bot.PollingBot.get_results"><code class="docutils literal notranslate"><span class="pre">PollingBot.get_results()</span></code></a></li>
+<li><a class="reference internal" href="#polling_bot.PollingBot.get_voters"><code class="docutils literal notranslate"><span class="pre">PollingBot.get_voters()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -180,12 +184,32 @@ If there are multiple winners of the poll, then they all will be displayed.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="polling_bot.PollingBot.add_vote">
-<span class="sig-name descname"><span class="pre">add_vote</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_choice</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#polling_bot.PollingBot.add_vote" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">add_vote</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_choice</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#polling_bot.PollingBot.add_vote" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds a vote to the specified choice in the poll. Modifies poll_data in place.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>num_choice</strong> (<em>int</em>) – Number corresponding to intended choice.
 Number is visible by running /view poll command.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if choice exists and voter has not voted yet, false otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="polling_bot.PollingBot.check_time">
+<span class="sig-name descname"><span class="pre">check_time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#polling_bot.PollingBot.check_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the poll is past its expiry time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if poll has not expired, false otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>
@@ -207,6 +231,12 @@ Number is visible by running /view poll command.</p>
 <li><p><strong>num_choice</strong> (<em>int</em>) – Number for choice to modify, view with /view poll.</p></li>
 </ul>
 </dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if specified choice exists, false otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -217,6 +247,17 @@ Number is visible by running /view poll command.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>new_description</strong> (<em>str</em>) – Text for the new description.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="polling_bot.PollingBot.edit_duration">
+<span class="sig-name descname"><span class="pre">edit_duration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_duration</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#polling_bot.PollingBot.edit_duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Edits the duration of the poll.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>new_duration</strong> (<em>int</em>) – Time for new duration in minutes.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -235,10 +276,24 @@ Number is visible by running /view poll command.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="polling_bot.PollingBot.get_choices">
 <span class="sig-name descname"><span class="pre">get_choices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#polling_bot.PollingBot.get_choices" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets the choices and votes in the poll in a printable format.</p>
+<dd><p>Gets the choices in the poll in a printable format.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Formatted string of poll choices, choice number, and votes per choice.</p>
+<dd class="field-odd"><p>Formatted string of poll choices and choice number.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="polling_bot.PollingBot.get_choices_with_voters">
+<span class="sig-name descname"><span class="pre">get_choices_with_voters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#polling_bot.PollingBot.get_choices_with_voters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the choices, votes, and voters in the poll in a printable format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Formatted string of poll choices, choice number, and votes and voters per choice.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
@@ -295,6 +350,20 @@ Number is visible by running /view poll command.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Formatted string with winner of poll and number of votes.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="polling_bot.PollingBot.get_voters">
+<span class="sig-name descname"><span class="pre">get_voters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#polling_bot.PollingBot.get_voters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets who has voted in the poll in a printable format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Formatted string with list of voters.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
