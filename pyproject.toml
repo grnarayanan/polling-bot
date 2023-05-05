@@ -11,7 +11,7 @@ name = "polling-bot"
 authors = [{name = "Ganesan Narayanan", email = "ganesan.narayanan24@gmail.com"}]
 description="polling-bot is a Discord bot to conduct basic polling functions in a Discord server"
 readme = "README.md"
-version="0.1.0"
+version="0.2.0"
 requires-python = ">=3.7"
 
 dependencies = [
