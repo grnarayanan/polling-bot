@@ -11,6 +11,13 @@ Welcome to polling-bot's documentation!
 
 polling-bot is a Discord bot to conduct basic polling functions in a Discord server.
 
+Overview
+=======================================
+
+Often times, reaching a consensus can be difficult without an organized method in place, and so this polling bot can be added to a Discord server to solve that need in a simple and efficient manner. Use cases could include deciding with friends on a place to eat, what video game should be played, when to schedule a party, etc.
+
+The bot supports starting a poll and adding options for choices by the users. It will then keep track of responses made to the poll, and surface the winner of the poll when called upon.
+
 Setup
 ======
 
